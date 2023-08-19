@@ -1,3 +1,7 @@
+/**
+ * An abstract class representing a card game. <br><br>
+ * Handles the functions that aren't specific to a game, such as its child class {@code BlackjackGame}.
+ */
 public abstract class Game {
     private Deck gameDeck;
     private String name;
@@ -5,11 +9,17 @@ public abstract class Game {
     protected Game() {
         resetDeck();
     }
-
+    
+    /** 
+     * @return Deck
+     */
     public Deck getDeck() {
         return gameDeck;
     }
-
+    
+    /** 
+     * @param gameDeck
+     */
     public void setDeck(Deck gameDeck) {
         this.gameDeck = gameDeck;
     }

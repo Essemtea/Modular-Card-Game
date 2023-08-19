@@ -1,3 +1,11 @@
+/**
+ * An extension of the {@code GameScreen} class. Every {@code BlackjackScreen} is instantiated with
+ * a {@code BlackjackGame} instance, acting as a "view" to its "controller".<br><br>
+ * Handles surface-level interactions with the {@code BlackjackGame}'s player and dealer.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
 public class BlackjackScreen extends GameScreen {
     
     private BlackjackGame game;
@@ -7,7 +15,10 @@ public class BlackjackScreen extends GameScreen {
         this.game = game;
         printTitle();
     }
-
+    
+    /** 
+     * @return BlackjackGame
+     */
     @Override
     public BlackjackGame getGame() {
         return game;
@@ -18,6 +29,10 @@ public class BlackjackScreen extends GameScreen {
         Arcade.printSection("Starting a game of " + game.getName() + "!");
     }
 
+    
+    /** 
+     * @throws Exception
+     */
     public void placeBet() throws Exception {
         game.getPlayer().printBalance();
 

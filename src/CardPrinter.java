@@ -1,3 +1,9 @@
+/**
+ * An abstract class used to print out {@code Card} objects, both alone and in groups.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
 import java.util.ArrayList;
 
 public class CardPrinter {
@@ -5,6 +11,11 @@ public class CardPrinter {
 
     private CardPrinter() {}
 
+    
+    /** 
+     * @param card
+     * @return String[]
+     */
     private static String[] getCardLines(Card card) {
         String cardLines[] = new String[LINE_COUNT];
 
@@ -19,6 +30,11 @@ public class CardPrinter {
         return cardLines;
     }
 
+    
+    /** 
+     * @param cards
+     * @return String
+     */
     public static String getDeckString(Card... cards) {
         String deckString = "";
         String[][] deckLines = new String[cards.length][LINE_COUNT];

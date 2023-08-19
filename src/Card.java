@@ -1,3 +1,12 @@
+/**
+ * A generic playing card, with a type and sign. Because terminals don't suupport the
+ * relevant Unicode characters for card signs by default, letters are substituted in their place. <br><br>
+ * The value of a {@code Card} depends on the context it's used in,
+ * such as in {@code BlackjackGame}'s getValue(Card... cards) method.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
 public class Card {
     public enum Signs {
         HEARTS, SPADES, DIAMONDS, CLUBS;
@@ -33,10 +42,18 @@ public class Card {
         this.sign = sign;
     }
     
+    
+    /** 
+     * @return String
+     */
     public String getType() {
         return this.type;
     }
 
+    
+    /** 
+     * @return Signs
+     */
     public Signs getSign() {
         return this.sign;
     }

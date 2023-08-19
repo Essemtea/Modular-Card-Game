@@ -1,3 +1,10 @@
+/** 
+ * A subclass of {@code Player} used in the {@code BlackjackGame} class.
+ * Follows 'house rules' to determine its next move on its turn.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
 public class Dealer extends Player {
     private static Dealer instance;
     
@@ -6,11 +13,17 @@ public class Dealer extends Player {
         setHand(new Deck());
     }
 
+    
+    /** 
+     * @return Dealer
+     */
     public static Dealer getInstance() {
-        if (instance == null) {
-            return new Dealer();
-        } else {
-            return instance;
+        synchronized (Dealer.class) {
+            if (instance == null) {
+                return new Dealer();
+            } else {
+                return instance;
+            }
         }
     }
 }

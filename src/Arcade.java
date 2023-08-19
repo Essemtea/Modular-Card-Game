@@ -1,7 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Arcade {
+/**
+ * The {@code Arcade} class statically manages and maintains an {@code ArrayList} of {@code Game}s,
+ * and utilizes their accompanying {@code GameScreen}s to guide the player through available games.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
+public abstract class Arcade {
     private static final int TITLE_LENGTH = 64;
     private static Scanner s = new Scanner(System.in);
 
@@ -21,6 +28,10 @@ public class Arcade {
     }
 
 
+    
+    /** 
+     * @param title
+     */
     public static void printSection(String title) {
         String divider = "";
         for (int i = 0; i < TITLE_LENGTH - title.length(); i += 2) {
@@ -82,6 +93,10 @@ public class Arcade {
         System.exit(0);
     }
 
+    
+    /** 
+     * @throws Exception
+     */
     public static void playGame() throws Exception {
         if (gameList.isEmpty()) {
             throw new Exception("List of games is empty.");

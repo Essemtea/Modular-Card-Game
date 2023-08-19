@@ -17,6 +17,10 @@ public class Deck {
         this.cards = cards;
     }
 
+    
+    /** 
+     * @return ArrayList<Card>
+     */
     public ArrayList<Card> getCards() {
         return cards;
     }
@@ -125,6 +129,10 @@ public class Deck {
         CardPrinter.printCards(this);
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return CardPrinter.getDeckString(this);

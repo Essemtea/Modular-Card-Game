@@ -1,5 +1,13 @@
 import java.util.ArrayList;
 
+/**
+ * As an extnesion of {@code Game}, the {@code BlackjackGame} class controls the rules and functions of
+ * a full game of Blackjack. <br><br>
+ * It remains largely unaware of the higher-level {@code BlackjackScreen} class' functions beyond calling its constructor.
+ * 
+ * @author Syed Muhammad Tahir
+ * @author Haiden Hatcher
+ */
 public class BlackjackGame extends Game {
     public enum State {
         WIN,
@@ -29,10 +37,18 @@ public class BlackjackGame extends Game {
         this.bet = 0;
     }
 
+    
+    /** 
+     * @return Player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    
+    /** 
+     * @return Dealer
+     */
     public Dealer getDealer() {
         return dealer;
     }

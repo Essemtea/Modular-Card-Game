@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * The {@code Player} class represents participants of a {@code Game}.
+ * Presently, it acts as a Singleton to produce only one instance of the class,
+ * but subclasses like {@code Dealer} are free to follow their own model.
+ */
 public class Player {
     private static Player instance;
 
@@ -15,15 +20,25 @@ public class Player {
         this.balance = 100;
     }
 
+    
+    /** 
+     * @param name
+     * @return Player
+     */
     public static Player getInstance(String name) {
-        
-        if (instance == null) {
-            return new Player(name);
-        } else {
-            return instance;
+        synchronized (Player.class) {
+            if (instance == null) {
+                return new Player(name);
+            } else {
+                return instance;
+            }
         }
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName() {
         return name;
     }
